@@ -1,31 +1,41 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using System.Collections;
 
-public class VRButtonDepress : MonoBehaviour, IPointerClickHandler
+public class VRButtonTouch : MonoBehaviour
 {
-    // Set this in the Inspector to correspond with the SimonSaysGame button index.
+    // Set this index in the Inspector so it matches the corresponding button index in the SimonSaysGame.
     public int buttonIndex;
-    // Assign the GameObject that has the SimonSaysGame component.
+
+    // Reference to the GameManager script (SimonSaysGame) to call the button press method.
     public SimonSaysGame gameManager;
-    // How far the button should move when pressed.
+
+    // Visual feedback: how far the button moves when pressed.
     public Vector3 depressedOffset = new Vector3(0, -0.1f, 0);
-    // Duration of the depression animation.
+
+    // Duration for the button to move down/up.
     public float depressDuration = 0.1f;
 
-    // Called when the VR pointer clicks this object.
-    public void OnPointerClick(PointerEventData eventData)
+    // To prevent multiple triggers before the button resets.
+    private bool isPressed = false;
+
+    // This function is called when another collider enters the trigger collider.
+    private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(Depress());
+        // Check if the colliding object is tagged as "VRController".
+        if (!isPressed && other.CompareTag("VRController"))
+        {
+            isPressed = true;
+            StartCoroutine(DepressAndNotify());
+        }
     }
 
-    private IEnumerator Depress()
+    private IEnumerator DepressAndNotify()
     {
         Vector3 originalPos = transform.position;
         Vector3 depressedPos = originalPos + depressedOffset;
         float elapsed = 0f;
 
-        // Animate button moving down.
+        // Animate the button moving down.
         while (elapsed < depressDuration)
         {
             transform.position = Vector3.Lerp(originalPos, depressedPos, elapsed / depressDuration);
@@ -34,10 +44,10 @@ public class VRButtonDepress : MonoBehaviour, IPointerClickHandler
         }
         transform.position = depressedPos;
 
-        // Wait a moment before returning.
+        // Optional pause for visual effect.
         yield return new WaitForSeconds(0.2f);
 
-        // Animate button moving back to original position.
+        // Animate the button moving back to its original position.
         elapsed = 0f;
         while (elapsed < depressDuration)
         {
@@ -47,7 +57,10 @@ public class VRButtonDepress : MonoBehaviour, IPointerClickHandler
         }
         transform.position = originalPos;
 
-        // Now that the depressed animation is complete, notify the game manager.
+        // Notify the game manager that this button has been pressed.
         gameManager.OnColorButtonPressed(buttonIndex);
+
+        // Allow the button to be pressed again.
+        isPressed = false;
     }
 }
