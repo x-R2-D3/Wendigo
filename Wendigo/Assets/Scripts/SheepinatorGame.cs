@@ -1,57 +1,88 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class VRButtonTouch : MonoBehaviour
+public class SheepinatorGame : MonoBehaviour
 {
-    public int buttonIndex;
-    public SheepinatorGame gameManager;
+    public VRButtonTouch[] colorButtons; // Array of 4 buttons
+    public float sequenceDelay = 1f;
+    public float buttonLightDuration = 0.5f;
 
-    // For visual feedback (using the object's MeshRenderer instead of a UI Image)
-    private MeshRenderer meshRenderer;
+    private List<int> sequence = new List<int>();
+    private int playerIndex = 0;
+    private bool isPlayingSequence = false;
+    private bool isPlayerTurn = false;
+    private int currentRound = 0;
+    private const int MAX_ROUNDS = 4;
 
-    public Vector3 depressedOffset = new Vector3(0, -0.1f, 0);
-    public float depressDuration = 0.1f;
-    private bool isPressed = false;
-
-    void Awake()
+    public void BeginGame()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+        if (isPlayingSequence || isPlayerTurn) return;
+
+        sequence.Clear();
+        currentRound = 0;
+        StartNewRound();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void StartNewRound()
     {
-        if (!isPressed && other.CompareTag("VRController"))
-        {
-            isPressed = true;
-            StartCoroutine(DepressAndNotify());
-        }
+        currentRound++;
+        playerIndex = 0;
+        // Add new random color to sequence
+        sequence.Add(Random.Range(0, 4));
+        StartCoroutine(PlaySequence());
     }
 
-    private IEnumerator DepressAndNotify()
+    private IEnumerator PlaySequence()
     {
-        Vector3 originalPos = transform.position;
-        Vector3 depressedPos = originalPos + depressedOffset;
-        float elapsed = 0f;
-        while (elapsed < depressDuration)
+        isPlayingSequence = true;
+        yield return new WaitForSeconds(1f);
+
+        foreach (int buttonIndex in sequence)
         {
-            transform.position = Vector3.Lerp(originalPos, depressedPos, elapsed / depressDuration);
-            elapsed += Time.deltaTime;
-            yield return null;
+            yield return new WaitForSeconds(sequenceDelay);
+            yield return StartCoroutine(LightUpButton(buttonIndex));
         }
-        transform.position = depressedPos;
 
-        yield return new WaitForSeconds(0.2f);
+        isPlayingSequence = false;
+        isPlayerTurn = true;
+    }
 
-        elapsed = 0f;
-        while (elapsed < depressDuration)
+    private IEnumerator LightUpButton(int buttonIndex)
+    {
+        // Implement visual feedback for button lighting up
+        // You'll need to add this functionality to VRButtonTouch
+        colorButtons[buttonIndex].LightUp();
+        yield return new WaitForSeconds(buttonLightDuration);
+        colorButtons[buttonIndex].LightOff();
+    }
+
+    public void OnColorButtonPressed(int buttonIndex)
+    {
+        if (!isPlayerTurn) return;
+
+        if (buttonIndex == sequence[playerIndex])
         {
-            transform.position = Vector3.Lerp(depressedPos, originalPos, elapsed / depressDuration);
-            elapsed += Time.deltaTime;
-            yield return null;
+            playerIndex++;
+            if (playerIndex >= sequence.Count)
+            {
+                isPlayerTurn = false;
+                if (currentRound < MAX_ROUNDS)
+                {
+                    StartNewRound();
+                }
+                else
+                {
+                    // Game Won!
+                    Debug.Log("Congratulations! You won!");
+                }
+            }
         }
-        transform.position = originalPos;
-
-        gameManager.OnColorButtonPressed(buttonIndex);
-        isPressed = false;
+        else
+        {
+            // Game Over
+            isPlayerTurn = false;
+            Debug.Log("Game Over! Wrong sequence!");
+        }
     }
 }

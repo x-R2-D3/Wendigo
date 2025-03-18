@@ -1,0 +1,1 @@
+C:\Users\astro\Documents\GitHub\wendigo\Wendigo\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\445f3xjp\obj\arm64-v8a
