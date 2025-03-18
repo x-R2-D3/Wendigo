@@ -663,6 +663,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6775686208216663358, guid: a239c9797c67e43288b9c466547009e0, type: 3}
+      propertyPath: m_Name
+      value: BlueButton
+      objectReference: {fileID: 0}
+    - target: {fileID: -6377817381582048219, guid: a239c9797c67e43288b9c466547009e0, type: 3}
+      propertyPath: m_Name
+      value: RedButton
+      objectReference: {fileID: 0}
     - target: {fileID: -6339183325659717443, guid: a239c9797c67e43288b9c466547009e0, type: 3}
       propertyPath: m_TagString
       value: Goal
@@ -671,13 +679,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sheepinator (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3277723769861811558, guid: a239c9797c67e43288b9c466547009e0, type: 3}
+      propertyPath: m_Name
+      value: GreenButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059046015267346218, guid: a239c9797c67e43288b9c466547009e0, type: 3}
+      propertyPath: m_Name
+      value: YellowButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3277723769861811558, guid: a239c9797c67e43288b9c466547009e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 251615905}
+    - targetCorrespondingSourceObject: {fileID: 3277723769861811558, guid: a239c9797c67e43288b9c466547009e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 251615904}
     - targetCorrespondingSourceObject: {fileID: -6339183325659717443, guid: a239c9797c67e43288b9c466547009e0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 251615901}
+    - targetCorrespondingSourceObject: {fileID: -6339183325659717443, guid: a239c9797c67e43288b9c466547009e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 251615903}
   m_SourcePrefab: {fileID: 100100000, guid: a239c9797c67e43288b9c466547009e0, type: 3}
 --- !u!1 &251615900 stripped
 GameObject:
@@ -705,6 +730,62 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16869737, y: 0.16164516, z: 0.13532443}
   m_Center: {x: -0.000000079864584, y: 0.0000000061434293, z: -0.027773615}
+--- !u!1 &251615902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3277723769861811558, guid: a239c9797c67e43288b9c466547009e0, type: 3}
+  m_PrefabInstance: {fileID: 251615899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &251615903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251615900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e43c3d5d7dd15d4b9ff5818dcaa4ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorButtons: []
+  winRounds: 5
+--- !u!114 &251615904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251615902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8b87bacaad27f40bf3fd8d5d09b30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIndex: 0
+  gameManager: {fileID: 251615903}
+  depressedOffset: {x: 0, y: -0.1, z: 0}
+  depressDuration: 0.1
+--- !u!65 &251615905
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251615902}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010000002, y: 0.005, z: 0.010000003}
+  m_Center: {x: 6.9849193e-10, y: 0.000000029802322, z: -9.313226e-10}
 --- !u!1 &262298031 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e155f47995002d4cb89e4a4d6a3a711, type: 3}
