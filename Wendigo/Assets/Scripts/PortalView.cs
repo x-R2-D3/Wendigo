@@ -40,7 +40,8 @@ public class PortalView : MonoBehaviour
 
         // Adjust the portal view position based on the VR headset’s perspective
         Matrix4x4 cameraToWorld = xrCamera.cameraToWorldMatrix;
-        Matrix4x4 portalLocalToWorld = otherPortal.transform.localToWorldMatrix;
+        Matrix4x4 portalLocalToWorld = xrCamera.cameraToWorldMatrix;
+        //Matrix4x4 portalLocalToWorld = otherPortal.transform.localToWorldMatrix;
         Matrix4x4 worldToPortal = transform.worldToLocalMatrix;
 
         Matrix4x4 portalCameraMatrix = portalLocalToWorld * worldToPortal * cameraToWorld;
