@@ -44,6 +44,7 @@ public class VRButtonTouch : MonoBehaviour
         Vector3 originalPos = transform.position;
         Vector3 depressedPos = originalPos + depressedOffset;
         float elapsed = 0f;
+        LightUp();
         while (elapsed < depressDuration)
         {
             transform.position = Vector3.Lerp(originalPos, depressedPos, elapsed / depressDuration);
@@ -62,6 +63,7 @@ public class VRButtonTouch : MonoBehaviour
             yield return null;
         }
         transform.position = originalPos;
+        LightOff();
 
         gameManager.OnColorButtonPressed(buttonIndex);
         isPressed = false;
