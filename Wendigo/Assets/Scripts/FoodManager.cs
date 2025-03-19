@@ -8,7 +8,7 @@ public class FoodManager : MonoBehaviour
     private int totalFood;
     private int foodInGoal = 0;
 
-    [Header("Portal Settings")]
+    [Header("Settings")]
     public GameObject portalPrefab; // Assign in Inspector
     public AudioClip winSound; // Assign in Inspector
     private AudioSource audioSource;
@@ -29,7 +29,7 @@ public class FoodManager : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
 
-        totalFood = GameObject.FindGameObjectsWithTag("Interactable").Length;
+        totalFood = GameObject.FindGameObjectsWithTag("Food").Length;
     }
 
     public void FoodEnteredGoal()

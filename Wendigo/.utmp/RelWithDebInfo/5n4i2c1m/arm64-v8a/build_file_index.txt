@@ -1,0 +1,2 @@
+/Users/elysium/Desktop/TAMU/VR/Git/Wendigo/Wendigo/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt
+/Users/elysium/Desktop/TAMU/VR/Git/Wendigo/Wendigo/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/CMakeLists.txt
