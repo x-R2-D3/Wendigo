@@ -13,7 +13,7 @@ public class FoodManager : MonoBehaviour
     [Header("Settings")]
 
     public AudioSource winAudioSource;
-
+    public GameObject portal;
 
     private bool hasWon = false;
 
@@ -79,6 +79,7 @@ public class FoodManager : MonoBehaviour
         if (winAudioSource != null)
         {
             winAudioSource.Play();
+            portal.SetActive(true);
         }
         else
         {
