@@ -8,7 +8,7 @@ public class PortalTeleport : MonoBehaviour
     {
         float zPosition = transform.worldToLocalMatrix.MultiplyPoint3x4(other.transform.position).z;
 
-        if ( zPosition < 0)
+        if (zPosition < 0)
             Teleport(other.transform);
 
 
@@ -24,5 +24,5 @@ public class PortalTeleport : MonoBehaviour
         Quaternion difference = otherTeleport.transform.rotation * Quaternion.Inverse(transform.rotation * Quaternion.Euler(0, 180, 0));
         objectToTeleport.rotation = difference * objectToTeleport.rotation;
     }
-    
+
 }

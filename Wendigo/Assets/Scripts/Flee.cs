@@ -45,7 +45,7 @@ public class Flee : MonoBehaviour
             target = null; // Stops movement
 
             // Notify the GameManager
-            GameManager.Instance.SheepEnteredGoal();
+            //SheepManager.Instance.sheepInGoal();
         }
     }
 }

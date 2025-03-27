@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 73f795b623f88124f86fb86724f0c66c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - portalPrefab: {fileID: 2812351936782246043, guid: d4be7fae1d4fa544eaa3f8298f15efd2, type: 3}
+  - portalSpawnPoint: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
