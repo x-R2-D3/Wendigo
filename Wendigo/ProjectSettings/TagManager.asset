@@ -32,6 +32,8 @@ TagManager:
   - QDSUIToggleCheckboxRadio
   - VRController
   - Food
+  - Sensor
+  - Scan
   layers:
   - Default
   - TransparentFX

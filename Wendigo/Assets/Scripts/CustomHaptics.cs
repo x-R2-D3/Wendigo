@@ -23,10 +23,10 @@ public class CustomHaptics : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
 
-        GetComponent<HapticImpulsePlayer>().SendHapticImpulse(0.1f, 1f, 100f);
-        yield return new WaitForSeconds(2f);
-        GetComponent<HapticImpulsePlayer>().SendHapticImpulse(0.1f, 3f, 100f);
-        yield return new WaitForSeconds(2f);
+        GetComponent<HapticImpulsePlayer>().SendHapticImpulse(0.1f, 0.5f, 100f);
+        yield return new WaitForSeconds(1f);
+        GetComponent<HapticImpulsePlayer>().SendHapticImpulse(0.1f, 0.5f, 200f);
+        
 
         if (pickedUp)
         {

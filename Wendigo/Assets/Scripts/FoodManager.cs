@@ -7,7 +7,7 @@ public class FoodManager : MonoBehaviour
     public static FoodManager Instance;
 
     private int totalFood;
- 
+
     private HashSet<GameObject> foodInGoal = new HashSet<GameObject>();
 
     [Header("Settings")]
@@ -31,12 +31,12 @@ public class FoodManager : MonoBehaviour
         Debug.Log("Total Food Objects: " + totalFood);
     }
 
- 
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Food"))
         {
-           
+
             if (!foodInGoal.Contains(other.gameObject))
             {
                 foodInGoal.Add(other.gameObject);
