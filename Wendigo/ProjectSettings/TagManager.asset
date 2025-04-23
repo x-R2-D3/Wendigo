@@ -34,6 +34,7 @@ TagManager:
   - Food
   - Sensor
   - Scan
+  - SceneExit
   layers:
   - Default
   - TransparentFX
