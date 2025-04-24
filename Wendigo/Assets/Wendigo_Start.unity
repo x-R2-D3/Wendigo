@@ -1596,7 +1596,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 180897890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1677472549}
+        m_TargetAssemblyTypeName: NavLoader, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &248209896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3209,6 +3221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 536536092}
+  - component: {fileID: 536536093}
   m_Layer: 5
   m_Name: Card 1 (3)
   m_TagString: Untagged
@@ -3237,6 +3250,18 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: -220}
   m_SizeDelta: {x: 300, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &536536093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536536091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e86ecec2a48f84e809f48fccb9f628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &551412242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4997,7 +5022,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2098668797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1295803548}
+        m_TargetAssemblyTypeName: InteractLoader1, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1002012179
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5784,6 +5821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1295803547}
+  - component: {fileID: 1295803548}
   m_Layer: 5
   m_Name: Card 1 (2)
   m_TagString: Untagged
@@ -5812,6 +5850,18 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: -220}
   m_SizeDelta: {x: 300, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1295803548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295803546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec5e697b46053b439d768c738f4995c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1434383502
 GameObject:
   m_ObjectHideFlags: 0
@@ -6418,7 +6468,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1571431353}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1819927755}
+        m_TargetAssemblyTypeName: Clockout, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1456076436
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7210,13 +7272,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1677472548}
+  - component: {fileID: 1677472549}
   m_Layer: 5
   m_Name: Card 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1677472548
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7233,11 +7296,23 @@ RectTransform:
   - {fileID: 248209889}
   m_Father: {fileID: 2030453393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150, y: -660}
   m_SizeDelta: {x: 300, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1677472549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677472547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f6cbf0685fc0343b0b192964e781eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1770677733
 GameObject:
   m_ObjectHideFlags: 0
@@ -7691,7 +7766,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 110278388}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536536093}
+        m_TargetAssemblyTypeName: HapticsScene, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1782756996
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7709,6 +7796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1819927754}
+  - component: {fileID: 1819927755}
   m_Layer: 5
   m_Name: Card 1 (4)
   m_TagString: Untagged
@@ -7734,9 +7822,21 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -220}
+  m_AnchoredPosition: {x: 150, y: -660}
   m_SizeDelta: {x: 300, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1819927755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819927753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472e3634e8339e94c87ef51d20880c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1848321075
 GameObject:
   m_ObjectHideFlags: 0
@@ -8184,19 +8284,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 73102262534702633, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73102262534702633, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73102262534702633, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73102262534702633, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -220
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1212804589793868796, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_SizeDelta.y
@@ -8433,7 +8533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7158865763779469689, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8000442146769929938, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_SizeDelta.y
