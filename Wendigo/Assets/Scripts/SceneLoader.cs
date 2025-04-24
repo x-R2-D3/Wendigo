@@ -19,8 +19,8 @@ public class SceneLoader : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadSceneAsync(1);
-            SceneManager.UnloadSceneAsync(0);
+            SceneManager.LoadSceneAsync(2);
+            SceneManager.UnloadSceneAsync(1);
         }
     }
 }

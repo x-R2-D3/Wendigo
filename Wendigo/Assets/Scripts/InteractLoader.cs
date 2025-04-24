@@ -19,8 +19,8 @@ public class InteractLoader : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadSceneAsync(2);
-            SceneManager.UnloadSceneAsync(1);
+            SceneManager.LoadSceneAsync(3);
+            SceneManager.UnloadSceneAsync(2);
         }
     }
 }

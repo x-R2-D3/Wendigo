@@ -19,8 +19,8 @@ public class HapticsLoader : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadSceneAsync(3);
-            SceneManager.UnloadSceneAsync(2);
+            SceneManager.LoadSceneAsync(4);
+            SceneManager.UnloadSceneAsync(3);
         }
     }
 }

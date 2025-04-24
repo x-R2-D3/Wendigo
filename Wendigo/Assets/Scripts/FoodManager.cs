@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VRTemplate;
 using UnityEngine;
 
 public class FoodManager : MonoBehaviour
@@ -42,6 +43,7 @@ public class FoodManager : MonoBehaviour
                 foodInGoal.Add(other.gameObject);
                 Debug.Log("Food entered goal: " + foodInGoal.Count + " / 4");
                 CheckWinCondition();
+                GetComponent<StepManager>().Next();
             }
         }
     }

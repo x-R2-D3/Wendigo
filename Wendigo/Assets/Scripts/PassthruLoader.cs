@@ -19,8 +19,8 @@ public class PassthruLoader : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadSceneAsync(5);
-            SceneManager.UnloadSceneAsync(4);
+            SceneManager.LoadSceneAsync(6);
+            SceneManager.UnloadSceneAsync(5);
         }
     }
 }

@@ -14,7 +14,9 @@ public class ScannerGame : MonoBehaviour
     [Header("Settings")]
 
     public AudioSource winAudioSource;
+    public AudioSource scanAudio;
     public GameObject portal;
+    public GameObject lights;
 
     private bool hasWon = false;
 
@@ -42,7 +44,8 @@ public class ScannerGame : MonoBehaviour
             if (!ScannedGoals.Contains(other.gameObject))
             {
                 ScannedGoals.Add(other.gameObject);
-                
+                scanAudio.Play();
+
                 CheckWinCondition();
             }
         }
@@ -87,6 +90,7 @@ public class ScannerGame : MonoBehaviour
         {
             winAudioSource.Play();
             portal.SetActive(true);
+            lights.SetActive(false);
         }
         else
         {

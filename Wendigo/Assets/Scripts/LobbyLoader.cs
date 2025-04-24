@@ -19,8 +19,8 @@ public class LobbyLoader : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadSceneAsync(4);
-            SceneManager.UnloadSceneAsync(3);
+            SceneManager.LoadSceneAsync(5);
+            SceneManager.UnloadSceneAsync(4);
         }
     }
 }
