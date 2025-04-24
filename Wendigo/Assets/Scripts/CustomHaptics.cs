@@ -25,7 +25,7 @@ public class CustomHaptics : MonoBehaviour
 
         GetComponent<HapticImpulsePlayer>().SendHapticImpulse(0.1f, 0.5f, 100f);
         yield return new WaitForSeconds(1f);
-        GetComponent<HapticImpulsePlayer>().SendHapticImpulse(0.1f, 0.5f, 200f);
+        //GetComponent<HapticImpulsePlayer>().SendHapticImpulse(0.1f, 0.5f, 200f);
         
 
         if (pickedUp)
